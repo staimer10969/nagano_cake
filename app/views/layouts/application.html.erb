@@ -25,7 +25,20 @@
         <% if admin_signed_in? %>
         <li class="nav-item">
          <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-light' do%>
-          <i class="fas fa-sign-out-alt"></i> Log out
+          <i class="fas fa-sign-out-alt"></i> ログアウト
+         <% end %>
+        </li>
+        <% end %>
+
+        <li class="nav-item">
+         <%#= link_to about_path, class: 'nav-link text-light' do%>
+           <i class="fas fa-link"></i> About
+         <%# end %>
+        </li>
+
+        <li class="nav-item">
+         <%= link_to new_admin_session_path, class: 'nav-link text-light' do%>
+           <i class="fas fa-sign-in-alt"></i> ログイン
          <% end %>
         </li>
 

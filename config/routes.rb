@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+ 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
- resources :admin, only: [:new, :index, :show, :edit, :create, :update, :destroy]
+ resources :admin, only: [:top, :new, :show, :edit, :create, :update, :destroy]
 
   devise_for :customers, skip: [:passwords], controllers: {
   registrations: "public/registrations",
