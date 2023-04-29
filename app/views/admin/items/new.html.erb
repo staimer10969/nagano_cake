@@ -1,0 +1,32 @@
+<div class="container">
+<h2>商品新規登録</h2>
+<p class="notice"></p>
+
+<%= form_with model: @item, url:admin_items_path, local:true do |f| %>
+
+<div class="field">
+ <%= f.label :商品画像 %>
+ <%= f.file_field:image, accept:"image/*" %>
+</div>
+
+<div class="field">
+ <%= f.label :商品名 %>
+ <%= f.text_field :name, size:"55*5" %>
+</div>
+
+<div class="field">
+ <%= f.label :商品説明 %>
+ <%= f.text_area :introduction, size:"55*5" %>
+</div>
+
+<div class="field">
+ <%= f.label :税抜価格 %>
+ <%= f.text_field :price, size:"55*5"%>
+ <%= f.label :円 %>
+</div>
+
+<p class="notice"></p>
+<%= f.submit "新規登録", class: "btn btn-success pull-right" %>
+
+<% end %>
+</div>
