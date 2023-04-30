@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
-  get "admin" => "homes#top", as:'admin'
   namespace :admin do
+   get "admin" => "homes#top", as:'admin'
    resources :items, only: [:index, :new, :create, :show, :edit, :update]
    resources :customers, only: [:index, :show, :edit, :update]
    resources :orders, only: [:show]
@@ -17,7 +17,14 @@ Rails.application.routes.draw do
   scope module: :public do
    root to: 'homes#top'
    get "about" => "homes#about", as:'about'
-   get "customers/infomation" => "customers#show"
+   get "customers/information" => "customers#show"
+   get "customers/information/edit" => "customers#edit"
+   patch "customers/information" => "customers#update"
+   get "customers/confirm_withdraw" => "customers#confirm_withdraw"
+   patch "customers/withdraw" => "customers#withdraw"
+   delete "cart_items/destroy_all" => "cart_items#destroy_all"
+   post "orders/confirm" => "orders#confirm"
+   get "orders/complete" => "orders#complete"
    resources :items, only: [:index, :show]
    resources :cart_items, only: [:index, :update, :create, :destroy]
    resources :orders, only: [:new, :create, :index, :show]

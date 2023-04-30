@@ -1,0 +1,47 @@
+<div class="container">
+  <p class="notice"></p>
+  <h2>マイページ</h2>
+
+  <div class="text-left">
+    <p class="notice"></p>
+    <span>登録情報</span>&emsp;
+    <%= link_to "編集する", customers_information_edit_path, class: "btn btn-success" %>
+  </div>
+  <p class="notice"></p>
+
+  <table class="my-page-table">
+    <tbody>
+      <tr>
+       <td class="active">氏名</td>
+      </tr>
+
+      <tr>
+       <td class="active">カナ</td>
+      </tr>
+
+      <tr>
+       <td class="active">郵便番号</td>
+      </tr>
+
+      <tr>
+       <td class="active">住所</td>
+      </tr>
+
+      <tr>
+       <td class="active">電話番号</td>
+      </tr>
+
+      <tr>
+       <td class="active">メールアドレス</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="text-left">
+    <p class="notice"></p>
+    <span>注文履歴</span>&emsp;
+    <%= link_to "一覧を見る", orders_path, class: "btn btn-primary" %>
+  </div>
+
+</div>
