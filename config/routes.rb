@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
+
+  get "admin" => "homes#top", as:'admin'
   namespace :admin do
-   get "admin" => "homes#top", as:'admin'
    resources :items, only: [:index, :new, :create, :show, :edit, :update]
    resources :customers, only: [:index, :show, :edit, :update]
    resources :orders, only: [:show]

@@ -35,7 +35,7 @@
          <li class="nav-item">
           <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
          </li>
-        <%# elsif public_signed_in? %>
+        <% elsif customer_signed_in? %>
          <li class="nav-item">
           <%= link_to "マイページ", customers_information_path, class: 'nav-link text-light' %>
          </li>

@@ -5,7 +5,7 @@
   <div class="text-left">
     <p class="notice"></p>
     <span>登録情報</span>&emsp;
-    <%= link_to "編集する", customers_information_edit_path, class: "btn btn-success" %>
+    <%= link_to "編集する", customers_information_edit_path(@customer.id), class: "btn btn-success" %>
   </div>
   <p class="notice"></p>
 
@@ -13,26 +13,32 @@
     <tbody>
       <tr>
        <td class="active">氏名</td>
+       <td><%= (@customer.last_name + @customer.first_name) %></td>
       </tr>
 
       <tr>
        <td class="active">カナ</td>
+       <td><%= (@customer.last_name_kana + @customer.first_name_kana) %></td>
       </tr>
 
       <tr>
        <td class="active">郵便番号</td>
+       <td><%= @customer.postal_code.to_s.insert(3, "-") %></td>
       </tr>
 
       <tr>
        <td class="active">住所</td>
+       <td><%= @customer.address %></td>
       </tr>
 
       <tr>
        <td class="active">電話番号</td>
+       <td><%= @customer.telephone_number %></td>
       </tr>
 
       <tr>
        <td class="active">メールアドレス</td>
+       <td><%= @customer.email %></td>
       </tr>
 
     </tbody>
