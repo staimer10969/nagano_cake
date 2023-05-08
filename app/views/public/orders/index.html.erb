@@ -9,7 +9,6 @@
         <th>配送先</th>
         <th>注文商品</th>
         <th>支払金額</th>
-        <th>ステータス</th>
         <th>注文詳細</th>
       </tr>
     </thead>
@@ -19,10 +18,13 @@
       <tr>
         <td><%= order.created_at.to_s(:datetime_jp) %></td>
         <td>
-          <%= order.postal_code %></br>
+          〒<%= order.postal_code %></br>
           <%= order.address %></br>
           <%= order.name %>
         </td>
+        <td><%#= order_detail.item_id.name %></td>
+        <td><%= order.total_price.to_s(:delimited) %>円</td>
+        <td></td>
       </tr>
     </tbody>
     <% end %>

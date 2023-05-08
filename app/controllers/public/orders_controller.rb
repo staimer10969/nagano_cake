@@ -29,9 +29,9 @@ class Public::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
       @cart_items.each do |cart_item|
         order_detail = OrderDetail.new(order_id: @order.id)
+        order_detail.item_id = cart_item.item_id
         order_detail.price = cart_item.item.price
         order_detail.amount = cart_item.amount
-        order_detail.item_id = cart_item.item_id
         order_detail.save
       end
       @cart_items.destroy_all
@@ -39,7 +39,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_customer.orders.all
+    @orders = current_customer.orders.all.page(params[:page])
   end
 
   def show
@@ -48,7 +48,7 @@ class Public::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:postal_code, :address, :name, :payment_method, :total_price)
+    params.require(:order).permit(:postal_code, :address, :name, :payment_method, :total_price, :postage)
   end
 
 end

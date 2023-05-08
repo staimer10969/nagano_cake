@@ -46,6 +46,7 @@
           <tr>
             <td class="confirm-td">商品合計</td>
             <td><%= @total_price %></td>
+            <%= f.hidden_field :total_price, :value => @total_price+800 %>
           </tr>
 
           <tr>
@@ -60,19 +61,23 @@
     <div class="row">
     <h4>支払方法</h4>&emsp;
     <%= @order.payment_method_i18n %>
+    <%= f.hidden_field :payment_method, :value => @order.payment_method %>
   </div>
 
     <p class="notice"></p>
     <div class="row">
      <h4>お届け先</h4>&emsp;
        〒<%= @order.postal_code.to_s.insert(3, "-") %>
+       <%= f.hidden_field :postal_code, :value => @order.postal_code %>
        <%= @order.address %></br>
+       <%= f.hidden_field :address, :value => @order.address %>
        &emsp;<%= @order.name %>
+       <%= f.hidden_field :name, :value => @order.name %>
     </div>
 
     <p class="notice"></p>
     <div class="text-center">
       <%= f.submit "注文を確定する", class: "btn btn-success" %>
     </div>
- <% end %>
+  <% end %>
 </div>
