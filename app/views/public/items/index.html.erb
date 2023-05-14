@@ -1,25 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-     <p class="notice"></p>
-     <h2>商品一覧</h2>
-     <strong>（全<%= @items.count %>件）</strong>
-
-     <div class="col-md-9">
-       <% @items.each do |item| %>
-        <div class="item-list">
-          <%= image_tag item.get_image %></br>
-          <%= link_to item.name,item_path(item.id) %></br>
-          ¥<%= (item.price*1.1).floor.to_s(:delimited) %>
+<body>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+           <p class="notice"></p>
+           <h2>商品一覧</h2>
+           <strong>（全<%= @items.count %>件）</strong>
+           <p class="notice"></p>
         </div>
-       <% end %>
-     </div>
 
-     <p class="notice"></p>
-     <div class="text-senter">
-       <%= paginate @items %>
-     </div>
+      <div class="container ml-5">
+        <din class="row">
+           <% @items.each do |item| %>
+            <div class="item-list mr-3">
+              <%= image_tag item.get_image, fallback: 'no_image.jpg', size:'200x180' %></br>
+              <%= link_to item.name,item_path(item.id) %></br>
+              ¥<%= (item.price*1.1).floor.to_s(:delimited) %>
+            </div>
+           <% end %>
+        </din>
+      </div>
 
+         <p class="notice"></p>
+         <div class="paginate-item mx-auto">
+           <%= paginate @items %>
+         </div>
+      </div>
     </div>
-  </div>
-</div>
+  </main>
+</body>

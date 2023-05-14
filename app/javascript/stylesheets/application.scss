@@ -1,1 +1,133 @@
 @use '~bootstrap/scss/bootstrap';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main{
+  display: block;
+}
+
+.container{
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.p{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.top-text {
+  background-color: #FFCCFF;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 14px;
+  width: 380px;
+  height: 130px;
+  margin: 70px auto;
+}
+
+.about-text{
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 14px;
+  width: 800px;
+  height: 130px;
+  margin: 70px auto;
+}
+
+.item-list{
+  margin-bottom: 5%;
+}
+
+.col-md-12{
+  display: flex;
+}
+
+.customer_name{
+  color: #FFFFFF;
+  margin-left: 20%;
+  margin-bottom: -15px;
+}
+
+.login-text{
+  text-align: center;
+}
+
+h2 {
+	color: #dd6a7a; /* 文字色 */
+	padding: 5px 5px 5px 30px; /* 上・右・下・左の余白 */
+	position: relative;
+}
+h2:before {
+	background-color: #ef858c; /* 左側の線の色 */
+	border-radius: 5px;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 3px; /* 左端からの位置 */
+	width: 5px; /* 左側の線の幅 */
+	height: 100%;
+}
+h2:after {
+	background-color: #f3cbd0; /* 右側の線の色 */
+	border-radius: 5px;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 12px; /* 左端からの位置 */
+	width: 5px; /* 右側の線の幅 */
+	height: 100%;
+}
+
+h3{
+  color: #fffffb;
+  margin:1.4em 0;
+  position:relative;
+  padding: 0.2em 0 0 0.5em;
+  background: rgb(242,156,159);
+  background: linear-gradient(90deg, rgba(242,156,159,1) 0%, rgba(251,106,161,1) 84%);
+  box-shadow: 0 4px 0 #c8baa7;
+}
+h3::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 25px 20px;
+  border-style: solid;
+  border-color: transparent;
+  border-right-color: #fff;
+}
+
+.thanks{
+  margin-top: 25%;
+}
+
+.table-price{
+  margin-left: 10%;
+}
+
+.new-signup{
+  margin-left: 67px;
+}
+
+.item-show{
+  margin-left: 20%;
+}
+
+.cart_price{
+  width: 25%;
+  margin-left: 58%;
+}

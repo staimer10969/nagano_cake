@@ -1,30 +1,33 @@
-<div class="container">
-  <%= form_with model: @order, url: orders_confirm_path, local: true do |f| %>
-  <p class="notice"></p>
-  <h2>注文情報入力</h2>
+<body>
+  <main>
+    <div class="container">
+      <%= form_with model: @order, url: orders_confirm_path, local: true do |f| %>
+      <p class="notice"></p>
+      <h2>注文情報入力</h2>
 
-  <p class="notice"></p>
-  <div>
-    <h3><%= f.label :payment, "支払方法" %></h3>
-    <%= f.radio_button :payment_method, "credit_card" %>
-    <%= f.label :payment_method_credit_card, "クレジットカード" %>
-    </br>
-    <%= f.radio_button :payment_method, "transfer" %>
-    <%= f.label :payment_method_transfer, "銀行振込" %>
-  </div>
+      <div class="col-xl-4 ml-5">
+        <h3><%= f.label :payment, "支払方法" %></h3>
+        <%= f.radio_button :payment_method, "credit_card" %>
+        <%= f.label :payment_method_credit_card, "クレジットカード" %>
+        </br>
+        <%= f.radio_button :payment_method, "transfer" %>
+        <%= f.label :payment_method_transfer, "銀行振込" %>
+      </div>
 
-  <p class="notice"></p>
-  <div class="address-select">
-    <h3><%= f.label :address, "お届け先" %></h3>
-    〒<%= @customer.postal_code.to_s.insert(3, "-") %></br>
-    <%= @customer.address %></br>
-    <%= @customer.last_name %><%= @customer.first_name %>
-  </div>
+      <p class="notice"></p>
+      <div class="col-xl-4 ml-5">
+        <h3><%= f.label :address, "お届け先" %></h3>
+        〒<%= @customer.postal_code.to_s.insert(3, "-") %></br>
+        <%= @customer.address %></br>
+        <%= @customer.last_name %><%= @customer.first_name %>
+      </div>
 
-  <p class="notice"></p>
-  <div class="text-center">
-    <%= f.submit "確認画面へ進む", class:"btn btn-primary" %>
-  </div>
+      <p class="notice"></p>
+      <div class="text-center">
+        <%= f.submit "確認画面へ進む", class:"btn btn-primary" %>
+      </div>
 
-  <% end %>
-</div>
+      <% end %>
+    </div>
+  </main>
+</body>

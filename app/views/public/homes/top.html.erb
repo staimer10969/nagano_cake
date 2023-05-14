@@ -1,34 +1,39 @@
-<div class="container">
-  <div class="row">
+<body>
+  <main>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+              <div class="top-box">
+                <p class="top-text">
+                  ようこそ、ながのCAKEへ！</br>
+                  このサイトは、ケーキ販売のECサイトになります。</br>
+                  会員でない方も商品の閲覧はできますが、</br>
+                  購入は会員登録が必要になります。</br>
+                </p>
+              </div>
+            </div>
+        </div>
 
-    <div class="col-md-9">
-      <div class="top-box">
-        <p class="top-text">
-          ようこそ、ながのCAKEへ！</br>
-          このサイトは、ケーキ販売のECサイトになります。</br>
-          会員でない方も商品の閲覧はできますが、</br>
-          購入は会員登録が必要になります。</br>
-        </p>
-      </div>
+          <div class="new-item-title">
+            <h3>新着商品</h3>
+          </div>
+          </br>
+            <div class="row">
+              <p class="notice"></p>
+              <div class="col-md-12">
+                <% @items.each do |item| %>
+                <div class="new-item mr-5">
+                  <%= image_tag item.get_image, fallback: 'no_image.jpg', size:'240x200' %></br>
+                  <p><%= item.name %></p>
+                  <p>¥<%= (item.price*1.1).floor.to_s(:delimited) %>（税込）</p>
+                </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="items-more text-right">
+              <%= link_to "全ての商品を見る>>", items_path %>
+            </div>
     </div>
-
-    <div class="new-item-container">
-      <div class="new-item-title">
-        <h3>新着商品</h3>
-      </div>
-
-      <p class="notice"></p>
-      <% @items.each do |item| %>
-      <div class="new-item">
-        <%= image_tag item.get_image %></br>
-        <p><%= item.name %></p>
-        <p>¥<%= (item.price*1.1).floor.to_s(:delimited) %></p>
-      </div>
-      <% end %>
-
-      <div class="items-more">
-      <%= link_to "全ての商品を見る>>", items_path %>
-      </div>
-    </div>
-  </div>
-</div>
+  </main>
+</body>
