@@ -5,7 +5,6 @@
       <div class="row">
           <p class="notice"></p>
 
-
         <div class="col-xl-12">
           <table class="table order-table col-lg-12 ml-2 table-bordered">
             <thead class="table-active">
@@ -29,7 +28,7 @@
                 </td>
                 <td>
                   <% order.order_details.each do |order_detail| %>
-                   <%= order_detail.item.name %>
+                   <%= order_detail.item.name %></br>
                   <% end %>
                 </td>
 
