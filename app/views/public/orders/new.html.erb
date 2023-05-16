@@ -5,7 +5,7 @@
       <p class="notice"></p>
       <h2>注文情報入力</h2>
 
-      <div class="col-xl-4 ml-5">
+      <div class="col-xl-12 ml-5">
         <h3><%= f.label :payment, "支払方法" %></h3>
         <%= f.radio_button :payment_method, "credit_card" %>
         <%= f.label :payment_method_credit_card, "クレジットカード" %>
@@ -15,7 +15,7 @@
       </div>
 
       <p class="notice"></p>
-      <div class="col-xl-4 ml-5">
+      <div class="col-xl-12 ml-5">
         <h3><%= f.label :address, "お届け先" %></h3>
         〒<%= @customer.postal_code.to_s.insert(3, "-") %></br>
         <%= @customer.address %></br>

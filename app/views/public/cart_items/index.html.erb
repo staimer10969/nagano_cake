@@ -46,6 +46,7 @@
           <% end %>
         </table>
       </div>
+      <br>
 
       <div class="row">
          <%= link_to root_path do %>
@@ -55,7 +56,7 @@
 
          <table class="cart_price table-bordered">
            <tr>
-             <th class="table-active">合計金額</th>
+             &ensp;<th class="table-active">合計金額</th>
              <td>¥<%= @total_price.to_s(:delimited) %></td>
            </tr>
          </table>
