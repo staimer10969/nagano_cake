@@ -1,32 +1,47 @@
-<div class="container">
-<h2>商品編集</h2>
-<p class="notice"></p>
-<%= form_with model: @item, url:admin_item_path, local:true do |f| %>
+<body>
+ <main>
+   <div class="container">
+   <br>
+   <h2>商品編集</h2>
+   <%= form_with model: @item, url:admin_item_path, local:true do |f| %>
 
-<div class="field">
- <%= f.label :商品画像 %>
- <%= f.file_field:image, accept:"image/*" %>
-</div>
+   <br>
+   <div class="col-xl-12">
+     <table class="item-edit mx-auto">
+      <tr>
+        <th class="col-sm-3"><%= f.label :商品画像 %></th>
+        <td><%= f.file_field:image, accept:"image/*" %></td>
+      </tr>
 
-<div class="field">
- <%= f.label :商品名 %>
- <%= f.text_field :name, size:"55*5" %>
-</div>
+      <tr>
+        <th class="col-sm-3"><%= f.label :商品名 %></th>
+        <td><%= f.text_field :name, size:"30*5" %></td>
+      </tr>
 
-<div class="field">
- <%= f.label :商品説明 %>
- <%= f.text_area :introduction, size:"55*5" %>
-</div>
+      <tr>
+        <th class="col-sm-3"><%= f.label :商品説明 %></th>
+        <td><%= f.text_area :introduction, size:"30x5" %></td>
+      </tr>
 
-<div class="field">
- <%= f.label :税抜価格 %>
- <%= f.text_field :price, size:"55*5"%>
- <%= f.label :円 %>
-</div>
+      <tr>
+        <th class="col-sm-3"><%= f.label :税抜価格 %>
+        <td>
+          <%= f.text_field :price, size:"30*5"%>
+          <%= f.label :円 %>
+        </td>
+      </tr>
+     </table>
+    </div>
 
-<p class="notice"></p>
- <%= f.submit "変更を保存", class: "btn btn-success pull-right" %>
+     <br>
+     <div class="btn-class text-center ml-5">
+      <%= f.submit "変更を保存", class: "btn btn-success pull-right w-25" %>
+     </div>
 
-<% end %>
+   <% end %>
 
-</div>
+   </div>
+   <br>
+   <br>
+ </main>
+</body>

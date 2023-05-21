@@ -1,6 +1,6 @@
 <body>
   <main>
-    <div class="container">
+      <div class="container">
         <div class="row">
             <div class="col-xl-12">
               <div class="top-box">
@@ -23,7 +23,9 @@
               <div class="col-md-12">
                 <% @items.each do |item| %>
                 <div class="new-item mr-5">
-                  <%= image_tag item.get_image, fallback: 'no_image.jpg', size:'240x200' %></br>
+                  <%= link_to item_path(item.id) do %>
+                    <%= image_tag item.get_image, fallback: 'no_image.jpg', size:'240x200' %></br>
+                  <% end %>
                   <p><%= item.name %></p>
                   <p>¥<%= (item.price*1.1).floor.to_s(:delimited) %>（税込）</p>
                 </div>
@@ -34,6 +36,7 @@
             <div class="items-more text-right">
               <%= link_to "全ての商品を見る>>", items_path %>
             </div>
-    </div>
+      </div>
+      <br>
   </main>
 </body>

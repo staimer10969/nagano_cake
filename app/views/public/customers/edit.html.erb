@@ -1,8 +1,9 @@
 <body>
  <main>
     <div class="container">
-     <p class="notice"></p>
+     <br>
      <h2>会員情報編集</h2>
+     <br>
       <div class="row">
        <div class="col-xl-12 ml-4">
         <%= form_with(model:@customer, url:customers_information_path, local: true, method: :patch) do |f| %>
@@ -50,5 +51,8 @@
       </div>
      </div>
     </div>
+    <br>
+    <br>
+    <br>
  </main>
 </body>

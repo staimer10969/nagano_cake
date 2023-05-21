@@ -36,13 +36,17 @@
   margin: 70px auto;
 }
 
+footer{
+  background-color: #87CEEB;
+  width: 100%;
+  height: 62px;
+  // margin: 0 -200%;
+  // padding: 0 200%;
+}
+
 .about-text{
   text-align: center;
-  border-radius: 10px;
-  padding-top: 14px;
-  width: 800px;
-  height: 130px;
-  margin: 70px auto;
+  margin-top: 10px;
 }
 
 .item-list{
@@ -113,6 +117,7 @@ h3::after {
 
 .thanks{
   margin-top: 25%;
+  margin-bottom: 25%;
 }
 
 .table-price{
@@ -143,4 +148,31 @@ h3::after {
 
 .item-show-admin{
   margin-left: 15%;
+}
+
+.my-page-table{
+  line-height: 40px;
+  width: 480px;
+}
+
+// .public-order-table{
+  // border: none;
+// }
+
+.order-show-table, .customer-show{
+  line-height: 40px;
+}
+
+.item-edit{
+  line-height: 40px;
+}
+
+.customer-edit{
+  line-height: 30px;
+  margin-left: 70px;
+}
+
+.total-price{
+  line-height: 40px;
+  margin-left: 92px;
 }

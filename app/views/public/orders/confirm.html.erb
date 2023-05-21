@@ -1,10 +1,10 @@
 <body>
   <main>
     <div class="container">
-      <p class="notice"></p>
+      <br>
       <h2>注文情報確認</h2>
 
-      <p class="notice"></p>
+      <br>
       <div class="row">
         <div class="col-md-8 ml-5">
           <table class="table table-bordered">
@@ -20,7 +20,10 @@
             <tbody>
             <% @cart_items.each do |cart_item| %>
              <tr>
-               <td><%= cart_item.item.name %></td>
+               <td>
+                 <%= image_tag cart_item.item.get_image, fallback: 'no_image.jpg', size:'40x30' %>
+                 <%= cart_item.item.name %>
+               </td>
                <td><%= (cart_item.item.price*1.1).floor.to_s(:delimited) %></td>
                <td><%= cart_item.amount %></td>
                <td><%= cart_item.subtotal.to_s(:delimited) %></td>
@@ -30,7 +33,7 @@
             </tbody>
           </table>
         </div>
-        <p class="notice"></p>
+        <br>
 
 
       <%= form_with model: @order, url: orders_path, local: true do |f| %>
@@ -66,7 +69,7 @@
             <%= f.hidden_field :payment_method, :value => @order.payment_method %>
         </div>
 
-        <p class="notice"></p>
+        <br>
         <div class="row ml-5">
          <h4>お届け先</h4>&emsp;
            〒<%= @order.postal_code.to_s.insert(3, "-") %>
@@ -77,11 +80,14 @@
            <%= f.hidden_field :name, :value => @order.name %>
         </div>
 
-        <p class="notice"></p>
+        <br>
+        <br>
         <div class="text-center">
           <%= f.submit "注文を確定する", class: "btn btn-success" %>
         </div>
       <% end %>
     </div>
+    <br>
+    <br>
   </main>
 </body>

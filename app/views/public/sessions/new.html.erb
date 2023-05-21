@@ -1,49 +1,52 @@
 <body>
-  <main>
-    <div class="container">
-    <p class="notice"></p>
-    <h2>ログイン</h2>
-      <div class="row">
-       <div class="col-xl-12 ml-4">
+    <main>
+         <div class="container">
+          <p class="notice"></p>
+          <h2>ログイン</h2>
+          <div class="row">
+           <div class="col-xl-12 ml-4">
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-        <p class="notice"></p>
-        <h3 class="col-xs-3 ml-5">会員の方はこちらからログイン</h3>
-          <div class="login-text text-center">
-            <div class="form-group mt-5">
-              <%= f.label :メールアドレス, class: "col-lg-2" %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-lg-5" %>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :パスワード, class: "col-lg-2" %>
-              <%= f.password_field :password, autocomplete: "current-password", class: "col-lg-5" %>
-            </div>
-
-            <%# if devise_mapping.rememberable? %>
-              <!--<div class="field">-->
-                <%#= f.check_box :remember_me %>
-                <%#= f.label :remember_me %>
-              <!--</div>-->
-            <%# end %>
-          </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
             <p class="notice"></p>
-            <div class="text-center mt-5">
-              <%= f.submit "ログイン", class: "btn btn-primary w-25" %>
+            <h3 class="col-xs-3 ml-5">会員の方はこちらからログイン</h3>
+              <div class="login-text text-center">
+                <div class="form-group mt-5">
+                  <%= f.label :メールアドレス, class: "col-lg-2" %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-lg-5" %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :パスワード, class: "col-lg-2" %>
+                  <%= f.password_field :password, autocomplete: "current-password", class: "col-lg-5" %>
+                </div>
+
+                <%# if devise_mapping.rememberable? %>
+                  <!--<div class="field">-->
+                    <%#= f.check_box :remember_me %>
+                    <%#= f.label :remember_me %>
+                  <!--</div>-->
+                <%# end %>
+              </div>
+
+                <p class="notice"></p>
+                <div class="text-center mt-5">
+                  <%= f.submit "ログイン", class: "btn btn-primary w-25" %>
+                </div>
+
+            <% end %>
+
+            <p class="notice"></p>
+            <div class="text-left ml-5 mt-5">
+             <h3>会員登録がお済みでない方</h3>
+               <%= link_to "こちら", new_customer_registration_path %>
+               から新規登録を行ってください。
+               <%#= render "public/shared/links" %>
             </div>
-
-        <% end %>
-
-        <p class="notice"></p>
-        <div class="text-left ml-5 mt-5">
-         <h3>会員登録がお済みでない方</h3>
-           <%= link_to "こちら", new_customer_registration_path %>
-           から新規登録を行ってください。
-           <%#= render "public/shared/links" %>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+      <br>
+    </main>
+    <br>
 </body>

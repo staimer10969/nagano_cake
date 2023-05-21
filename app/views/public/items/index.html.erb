@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-           <p class="notice"></p>
+           <br>
            <h2>商品一覧</h2>
            <strong>（全<%= @items.count %>件）</strong>
            <p class="notice"></p>
@@ -13,8 +13,10 @@
         <din class="row">
            <% @items.each do |item| %>
             <div class="item-list mr-3">
-              <%= image_tag item.get_image, fallback: 'no_image.jpg', size:'200x180' %></br>
-              <%= link_to item.name,item_path(item.id) %></br>
+              <%= link_to item_path(item.id) do %>
+                <%= image_tag item.get_image, fallback: 'no_image.jpg', size:'200x180' %></br>
+              <% end %>
+              <%= item.name %></br>
               ¥<%= (item.price*1.1).floor.to_s(:delimited) %>
             </div>
            <% end %>
@@ -27,5 +29,6 @@
          </div>
       </div>
     </div>
+    <br>
   </main>
 </body>
